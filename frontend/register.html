@@ -1,0 +1,30 @@
+function registerUser(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let employeeId = document.getElementById("employeeId").value;
+    let email = document.getElementById("registerEmail").value;
+    let department = document.getElementById("department").value;
+    let password = document.getElementById("registerPassword").value;
+    let confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+
+        alert("Passwords do not match!");
+
+        return;
+    }
+
+    // Save user details temporarily
+    localStorage.setItem("userName", name);
+    localStorage.setItem("employeeId", employeeId);
+    localStorage.setItem("userEmail", email);
+    localStorage.setItem("department", department);
+    localStorage.setItem("userPassword", password);
+
+    alert("Registration successful! 🎉");
+
+    // Go to Login page
+    window.location.href = "index.html";
+}
