@@ -8,7 +8,7 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
-    <title>Recommended Courses</title>
+    <title>StatLearn AI - Courses</title>
 
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -18,20 +18,28 @@
 
 </head>
 
+
 <body>
+
 
 <nav class="navbar navbar-dark bg-primary">
 
     <div class="container">
 
-        <a class="navbar-brand"
-           href="dashboard.html">
+        <a
+            class="navbar-brand fw-bold"
+            href="dashboard.html">
+
             🤖 StatLearn AI
+
         </a>
 
-        <a class="btn btn-light"
-           href="dashboard.html">
+        <a
+            class="btn btn-light"
+            href="dashboard.html">
+
             Dashboard
+
         </a>
 
     </div>
@@ -39,19 +47,28 @@
 </nav>
 
 
+
 <div class="container mt-5">
+
 
     <h2>
         📚 Personalized Learning
     </h2>
 
+
     <p class="text-muted">
-        Courses recommended based on your competency gaps.
+
+        Recommended learning resources based
+        on your competency gaps.
+
     </p>
+
 
 
     <div class="row g-4 mt-2">
 
+
+        <!-- COURSE 1 -->
 
         <div class="col-md-4">
 
@@ -61,29 +78,44 @@
                     📊
                 </div>
 
+
                 <h4>
                     Statistical Methods
                 </h4>
 
+
                 <p>
+
                     Learn statistical concepts,
-                    sampling and data analysis.
+                    sampling methods and
+                    statistical analysis.
+
                 </p>
+
 
                 <span class="badge bg-danger">
                     High Priority
                 </span>
 
+
                 <br><br>
 
-                <button class="btn btn-primary">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="startCourse('Statistical Methods')">
+
                     Start Course
+
                 </button>
 
             </div>
 
         </div>
 
+
+
+        <!-- COURSE 2 -->
 
         <div class="col-md-4">
 
@@ -93,29 +125,44 @@
                     📈
                 </div>
 
+
                 <h4>
                     Data Visualization
                 </h4>
 
+
                 <p>
-                    Learn charts, dashboards and
-                    effective data presentation.
+
+                    Learn charts, dashboards
+                    and effective data
+                    presentation.
+
                 </p>
+
 
                 <span class="badge bg-warning text-dark">
                     Medium Priority
                 </span>
 
+
                 <br><br>
 
-                <button class="btn btn-primary">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="startCourse('Data Visualization')">
+
                     Start Course
+
                 </button>
 
             </div>
 
         </div>
 
+
+
+        <!-- COURSE 3 -->
 
         <div class="col-md-4">
 
@@ -125,23 +172,34 @@
                     🤖
                 </div>
 
+
                 <h4>
                     Emerging Technologies
                 </h4>
 
+
                 <p>
+
                     Explore AI, machine learning
                     and modern technologies.
+
                 </p>
+
 
                 <span class="badge bg-danger">
                     High Priority
                 </span>
 
+
                 <br><br>
 
-                <button class="btn btn-primary">
+
+                <button
+                    class="btn btn-primary"
+                    onclick="startCourse('Emerging Technologies')">
+
                     Start Course
+
                 </button>
 
             </div>
@@ -151,27 +209,42 @@
     </div>
 
 
+
     <!-- IGOT -->
 
     <div class="igot-card mt-5">
 
+
         <h3>
-            🇮🇳 iGOT Karmayogi Integration
+            🇮🇳 iGOT Karmayogi
         </h3>
 
+
         <p>
-            Access relevant government learning
-            programs and training resources.
+
+            Find relevant government training
+            programs and learning resources.
+
         </p>
 
-        <button class="btn btn-light">
+
+        <button
+            class="btn btn-light"
+            onclick="openIGOT()">
+
             Explore iGOT Courses
+
         </button>
 
+
     </div>
+
 
 </div>
 
 
+<script src="script.js"></script>
+
 </body>
+
 </html>

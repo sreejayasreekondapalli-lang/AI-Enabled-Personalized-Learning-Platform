@@ -1,92 +1,775 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>StatLearn AI - Login</title>
+    <title>StatLearn AI - Dashboard</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
-<body class="login-body">
 
-<div class="container">
-    <div class="row justify-content-center align-items-center min-vh-100">
+<body>
 
-        <div class="col-md-5">
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
-            <div class="login-card">
+<nav class="navbar navbar-expand-lg modern-navbar">
 
-                <div class="text-center mb-4">
+    <div class="container-fluid px-4">
 
-                    <div class="logo-circle">
-                        🤖
+        <a class="navbar-brand brand-logo" href="dashboard.html">
+
+            <span class="brand-icon">
+                🤖
+            </span>
+
+            <span>
+                StatLearn <b>AI</b>
+            </span>
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarNav">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="dashboard.html">
+
+                        <i class="bi bi-grid"></i>
+                        Dashboard
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="assessment.html">
+
+                        <i class="bi bi-clipboard-check"></i>
+                        Assessment
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="courses.html">
+
+                        <i class="bi bi-book"></i>
+                        Courses
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="upload.html">
+
+                        <i class="bi bi-file-earmark-arrow-up"></i>
+                        AI Analyzer
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="analytics.html">
+
+                        <i class="bi bi-bar-chart"></i>
+                        Analytics
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item ms-lg-3">
+
+                    <a
+                        class="profile-button"
+                        href="#">
+
+                        <span class="profile-avatar">
+                            👩‍💻
+                        </span>
+
+                        <span id="navUserName">
+                            Learner
+                        </span>
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="logout-link"
+                        href="#"
+                        onclick="logoutUser()">
+
+                        <i class="bi bi-box-arrow-right"></i>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="container-fluid px-4 py-4">
+
+
+    <!-- =================================================
+         WELCOME HERO
+    ================================================= -->
+
+    <section class="hero-dashboard">
+
+        <div class="hero-content">
+
+            <div class="ai-status">
+
+                <span class="status-dot"></span>
+
+                AI Learning Assistant Active
+
+            </div>
+
+
+            <h1>
+
+                Welcome back,
+                <span id="userName">
+                    Learner
+                </span>
+                👋
+
+            </h1>
+
+
+            <p>
+
+                Your personalized learning journey is ready.
+                Let's close your competency gaps and build
+                new skills today.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="assessment.html"
+                    class="btn btn-light hero-btn">
+
+                    <i class="bi bi-rocket-takeoff"></i>
+
+                    Take AI Assessment
+
+                </a>
+
+
+                <a
+                    href="courses.html"
+                    class="btn btn-outline-light hero-btn">
+
+                    Explore Courses
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- AI VISUAL -->
+
+        <div class="hero-ai-visual">
+
+            <div class="ai-orbit orbit-one"></div>
+
+            <div class="ai-orbit orbit-two"></div>
+
+            <div class="ai-core">
+
+                🤖
+
+            </div>
+
+            <div class="floating-icon icon-one">
+                📊
+            </div>
+
+            <div class="floating-icon icon-two">
+                🧠
+            </div>
+
+            <div class="floating-icon icon-three">
+                🎯
+            </div>
+
+            <div class="floating-icon icon-four">
+                ✨
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         STATISTICS
+    ================================================= -->
+
+    <section class="row g-4 mt-2">
+
+
+        <!-- SCORE -->
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="modern-stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon purple">
+                        <i class="bi bi-bullseye"></i>
                     </div>
 
-                    <h2>StatLearn AI</h2>
-
-                    <p class="text-muted">
-                        Personalized Learning Platform
-                    </p>
+                    <span class="stat-trend">
+                        +8%
+                    </span>
 
                 </div>
 
-                <form onsubmit="loginUser(event)">
 
-                    <div class="mb-3">
-                        <label class="form-label">
-                            Employee ID / Email
-                        </label>
+                <p>
+                    Overall Skill Score
+                </p>
 
-                        <input
-                            type="text"
-                            id="email"
-                            class="form-control"
-                            placeholder="Enter your ID or email"
-                            required
-                        >
+
+                <h2>
+                    72<span>%</span>
+                </h2>
+
+
+                <div class="mini-progress">
+
+                    <div style="width:72%"></div>
+
+                </div>
+
+
+                <small>
+                    Improved this month
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- COURSES -->
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="modern-stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon blue">
+                        <i class="bi bi-book"></i>
                     </div>
 
-                    <div class="mb-3">
-                        <label class="form-label">
-                            Password
-                        </label>
+                    <span class="stat-label">
+                        Learning
+                    </span>
 
-                        <input
-                            type="password"
-                            id="password"
-                            class="form-control"
-                            placeholder="Enter password"
-                            required
-                        >
+                </div>
+
+
+                <p>
+                    Courses Completed
+                </p>
+
+
+                <h2>
+                    08<span>/12</span>
+                </h2>
+
+
+                <div class="mini-progress">
+
+                    <div style="width:67%"></div>
+
+                </div>
+
+
+                <small>
+                    4 courses remaining
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- QUIZ -->
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="modern-stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon cyan">
+                        <i class="bi bi-patch-check"></i>
                     </div>
 
-                    <div class="d-flex justify-content-between mb-3">
+                    <span class="stat-trend">
+                        +12%
+                    </span>
 
-                        <div>
-                            <input type="checkbox">
-                            Remember me
+                </div>
+
+
+                <p>
+                    Quiz Accuracy
+                </p>
+
+
+                <h2>
+                    84<span>%</span>
+                </h2>
+
+
+                <div class="mini-progress">
+
+                    <div style="width:84%"></div>
+
+                </div>
+
+
+                <small>
+                    24 quizzes completed
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- STREAK -->
+
+        <div class="col-xl-3 col-md-6">
+
+            <div class="modern-stat-card">
+
+                <div class="stat-top">
+
+                    <div class="stat-icon orange">
+                        <i class="bi bi-fire"></i>
+                    </div>
+
+                    <span class="stat-label">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <p>
+                    Learning Streak
+                </p>
+
+
+                <h2>
+                    07<span> Days</span>
+                </h2>
+
+
+                <div class="streak-dots">
+
+                    <span>✓</span>
+                    <span>✓</span>
+                    <span>✓</span>
+                    <span>✓</span>
+                    <span>✓</span>
+                    <span>✓</span>
+                    <span>✓</span>
+
+                </div>
+
+
+                <small>
+                    Keep going! 🔥
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         MAIN GRID
+    ================================================= -->
+
+    <section class="row g-4 mt-1">
+
+
+        <!-- =============================================
+             COMPETENCY PROFILE
+        ============================================== -->
+
+        <div class="col-xl-7">
+
+            <div class="modern-card competency-card">
+
+
+                <div class="card-heading">
+
+                    <div>
+
+                        <span class="section-label">
+                            AI ANALYSIS
+                        </span>
+
+                        <h3>
+                            🧠 Competency Profile
+                        </h3>
+
+                        <p>
+                            Your current skill levels based on
+                            assessments and learning activity.
+                        </p>
+
+                    </div>
+
+
+                    <span class="ai-badge">
+                        <i class="bi bi-stars"></i>
+                        AI Powered
+                    </span>
+
+                </div>
+
+
+
+                <!-- SKILL 1 -->
+
+                <div class="skill-row">
+
+                    <div class="skill-info">
+
+                        <span>
+                            Statistical Methods
+                        </span>
+
+                        <b>
+                            45%
+                        </b>
+
+                    </div>
+
+
+                    <div class="modern-progress">
+
+                        <div
+                            class="progress-danger"
+                            style="width:45%">
+
                         </div>
 
-                        <a href="#">Forgot Password?</a>
+                    </div>
+
+
+                    <small class="gap-text">
+                        High competency gap
+                    </small>
+
+                </div>
+
+
+
+                <!-- SKILL 2 -->
+
+                <div class="skill-row">
+
+                    <div class="skill-info">
+
+                        <span>
+                            Data Visualization
+                        </span>
+
+                        <b>
+                            60%
+                        </b>
 
                     </div>
 
-                    <button class="btn btn-primary w-100">
-                        Login
-                    </button>
 
-                </form>
+                    <div class="modern-progress">
 
-                <div class="text-center mt-4">
+                        <div
+                            class="progress-warning"
+                            style="width:60%">
+
+                        </div>
+
+                    </div>
+
+
+                    <small class="gap-text">
+                        Moderate competency gap
+                    </small>
+
+                </div>
+
+
+
+                <!-- SKILL 3 -->
+
+                <div class="skill-row">
+
+                    <div class="skill-info">
+
+                        <span>
+                            Data Analysis
+                        </span>
+
+                        <b>
+                            75%
+                        </b>
+
+                    </div>
+
+
+                    <div class="modern-progress">
+
+                        <div
+                            class="progress-success"
+                            style="width:75%">
+
+                        </div>
+
+                    </div>
+
+
+                    <small class="gap-text success-text">
+                        Good competency
+                    </small>
+
+                </div>
+
+
+
+                <!-- SKILL 4 -->
+
+                <div class="skill-row">
+
+                    <div class="skill-info">
+
+                        <span>
+                            Emerging Technologies
+                        </span>
+
+                        <b>
+                            40%
+                        </b>
+
+                    </div>
+
+
+                    <div class="modern-progress">
+
+                        <div
+                            class="progress-danger"
+                            style="width:40%">
+
+                        </div>
+
+                    </div>
+
+
+                    <small class="gap-text">
+                        High competency gap
+                    </small>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =============================================
+             AI RECOMMENDATION
+        ============================================== -->
+
+        <div class="col-xl-5">
+
+            <div class="ai-recommendation-card">
+
+
+                <div class="recommendation-glow"></div>
+
+
+                <div class="recommendation-header">
+
+                    <div class="ai-avatar">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <span>
+                            STATLEARN AI
+                        </span>
+
+                        <h4>
+                            Personalized Recommendation
+                        </h4>
+
+                    </div>
+
+                </div>
+
+
+                <div class="recommendation-body">
 
                     <p>
-                        New learner?
-                        <a href="#">Create Account</a>
+                        Based on your competency assessment,
+                        I recommend focusing on:
                     </p>
+
+
+                    <div class="recommended-skill">
+
+                        <div class="skill-round-icon">
+                            📊
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Statistical Methods
+                            </h5>
+
+                            <span>
+                                Current competency: 45%
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="recommendation-details">
+
+                        <div>
+                            <i class="bi bi-clock"></i>
+
+                            <span>
+                                4 hours
+                            </span>
+                        </div>
+
+
+                        <div>
+                            <i class="bi bi-bar-chart"></i>
+
+                            <span>
+                                High priority
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="courses.html"
+                        class="btn ai-start-btn">
+
+                        Start Recommended Learning
+
+                        <i class="bi bi-arrow-right"></i>
+
+                    </a>
 
                 </div>
 
@@ -94,10 +777,285 @@
 
         </div>
 
+    </section>
+
+
+
+    <!-- =================================================
+         QUICK ACTIONS
+    ================================================= -->
+
+    <section class="mt-4">
+
+        <div class="modern-card">
+
+            <div class="card-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        LEARNING HUB
+                    </span>
+
+                    <h3>
+                        ⚡ Quick Actions
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="row g-3">
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <a
+                        href="assessment.html"
+                        class="action-card">
+
+                        <div class="action-icon purple-bg">
+                            📝
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Skill Assessment
+                            </h5>
+
+                            <p>
+                                Test your knowledge
+                            </p>
+
+                        </div>
+
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <a
+                        href="upload.html"
+                        class="action-card">
+
+                        <div class="action-icon blue-bg">
+                            📄
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                AI Material Analyzer
+                            </h5>
+
+                            <p>
+                                Upload PDF & generate MCQs
+                            </p>
+
+                        </div>
+
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <a
+                        href="courses.html"
+                        class="action-card">
+
+                        <div class="action-icon green-bg">
+                            📚
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Learning Courses
+                            </h5>
+
+                            <p>
+                                Personalized resources
+                            </p>
+
+                        </div>
+
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6">
+
+                    <a
+                        href="analytics.html"
+                        class="action-card">
+
+                        <div class="action-icon orange-bg">
+                            📈
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Learning Analytics
+                            </h5>
+
+                            <p>
+                                Track your progress
+                            </p>
+
+                        </div>
+
+                        <i class="bi bi-arrow-up-right"></i>
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         IGOT SECTION
+    ================================================= -->
+
+    <section class="igot-modern mt-4">
+
+        <div class="igot-pattern"></div>
+
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <div class="igot-title">
+
+                    🇮🇳
+
+                    <span>
+                        iGOT Karmayogi Integration
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Continue your learning journey
+                    with government training resources.
+                </h2>
+
+
+                <p>
+
+                    Discover relevant courses and learning
+                    opportunities aligned with your competency
+                    development needs.
+
+                </p>
+
+
+                <a
+                    href="courses.html"
+                    class="btn btn-light">
+
+                    Explore iGOT Learning
+
+                    <i class="bi bi-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <div class="col-lg-4 text-center">
+
+                <div class="igot-visual">
+
+                    🇮🇳
+
+                    <span>
+                        +
+                    </span>
+
+                    🤖
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         AI ASSISTANT
+    ================================================= -->
+
+    <button
+        class="ai-chat-button"
+        onclick="showAIMessage()">
+
+        <span class="chat-pulse"></span>
+
+        🤖
+
+    </button>
+
+
+    <div
+        id="aiMessage"
+        class="ai-chat-message">
+
+        <b>StatLearn AI</b>
+
+        <br>
+
+        Your competency profile is ready!
+        Start with Statistical Methods to
+        improve your learning score.
+
     </div>
-</div>
+
+
+</main>
+
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Our JS -->
 
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
