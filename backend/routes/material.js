@@ -1,29 +1,8 @@
-const uploadMaterial = async (req, res) => {
-    try {
-        if (!req.file) {
-            return res.status(400).json({
-                message: "Please upload a PDF file"
-            });
-        }
+const express = require("express");
+const router = express.Router();
 
-        res.status(200).json({
-            message: "Learning material uploaded successfully",
-            file: {
-                filename: req.file.filename,
-                originalName: req.file.originalname,
-                size: req.file.size,
-                path: req.file.path
-            }
-        });
+const { uploadMaterial } = require("../controllers/materialController");
 
-    } catch (error) {
-        res.status(500).json({
-            message: "Material upload failed",
-            error: error.message
-        });
-    }
-};
+router.post("/upload", uploadMaterial);
 
-module.exports = {
-    uploadMaterial
-};
+module.exports = router;
