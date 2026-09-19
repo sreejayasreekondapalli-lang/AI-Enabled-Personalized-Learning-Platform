@@ -1,4 +1,6 @@
+const path = require("path");
 const mysql = require("mysql2");
+require("dotenv").config({ path: path.resolve(__dirname, "..", ".env") });
 
 const db = mysql.createConnection({
     host: process.env.DB_HOST || "localhost",
@@ -10,7 +12,8 @@ const db = mysql.createConnection({
 
 db.connect((err) => {
     if (err) {
-        console.log("Database connection failed:", err.message);
+        console.error("Database connection failed:", err.message);
+        console.error("Check that MySQL is running and the DB credentials in backend/.env are correct.");
         return;
     }
 
